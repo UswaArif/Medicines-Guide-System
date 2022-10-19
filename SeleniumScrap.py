@@ -232,7 +232,89 @@ urlList = ['https://www.flipkart.com/health-care/home-medicines/pr?sid=hlc,ah4&m
            'https://www.flipkart.com/health-care/home-medicines/general-wellness/ayurvedic/pr?sid=hlc%2Cah4%2Ciav%2Cjnk&q=medicines&otracker=categorytree&page=39',
            'https://www.flipkart.com/health-care/home-medicines/general-wellness/allopathy/pr?sid=hlc,ah4,iav,6ym&q=medicines&otracker=categorytree',
            'https://www.flipkart.com/health-care/home-medicines/general-wellness/allopathy/pr?sid=hlc%2Cah4%2Ciav%2C6ym&q=medicines&otracker=categorytree&page=2',
-           '']          
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/allopathy/pr?sid=hlc,ah4,ed5,e42&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/ayurvedic/pr?sid=hlc,ah4,ed5,ozh&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/ayurvedic/pr?sid=hlc%2Cah4%2Ced5%2Cozh&q=medicines&otracker=categorytree&page=2',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc,ah4,ed5,okh&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=2',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=3',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=4',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=5',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=6',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=7',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=8',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=9',
+           'https://www.flipkart.com/health-care/home-medicines/post-natal-care/homeopathy/pr?sid=hlc%2Cah4%2Ced5%2Cokh&q=medicines&otracker=categorytree&page=10',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/allopathy/pr?sid=hlc,ah4,jn8,yql&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/allopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cyql&q=medicines&otracker=categorytree&page=2',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/allopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cyql&q=medicines&otracker=categorytree&page=3',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/allopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cyql&q=medicines&otracker=categorytree&page=4',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/allopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cyql&q=medicines&otracker=categorytree&page=5',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc,ah4,jn8,ptv&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=2',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=3',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=4',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=5',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=6',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=7',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=8',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=9',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=10',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=11',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=12',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=13',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=14',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=15',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=16',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=17',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=18',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=19',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=20',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=21',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=22',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=23',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=24',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=25',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=26',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=27',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=28',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=29',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=30',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/homeopathy/pr?sid=hlc%2Cah4%2Cjn8%2Cptv&q=medicines&otracker=categorytree&page=31',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc,ah4,jn8,wi9&q=medicines&otracker=categorytree',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=2',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=3',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=4',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=5',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=6',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=7',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=8',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=9',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=10',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=11',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=12',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=13',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=14',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=15',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=16',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=17',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=18',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=19',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=20',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=21',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=22',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=23',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=24',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=25',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=26',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=27',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=28',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=29',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=30',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=31',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=32',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=33',
+           'https://www.flipkart.com/health-care/home-medicines/skin-care/ayurvedic/pr?sid=hlc%2Cah4%2Cjn8%2Cwi9&q=medicines&otracker=categorytree&page=34']          
 
 product_name = []
 product_newPrice = []
@@ -281,6 +363,10 @@ for i in urlList:
             rating.append(rate.text)
         else:
             rating.append("0")
+        if(disc!=None):
+            discount.append(disc.text)
+        else:
+            discount.append("0")
         if(descrip!=None):
             description.append(descrip.text)
         else:
@@ -288,9 +374,9 @@ for i in urlList:
 
     df = pd.DataFrame(
     {"MedicineName":product_name ,"Old price":product_oldprice,"NewPrice":product_newPrice,"Quantity":quantity,"Stars":stars,
-      "Rating":rating,"Description":description })
+      "Rating":rating,"Discount": discount,"Description":description })
     df.to_csv('newdata.csv',index=False)
               
 print(len(product_name),len(product_newPrice),len(product_oldprice))        
 for i in range(0,len(product_name)):
-    print(product_name[i],product_newPrice[i],product_oldprice[i],quantity[i],stars[i],rating[i],description[i])
+    print(product_name[i],product_newPrice[i],product_oldprice[i],quantity[i],stars[i],rating[i],discount[i],description[i])
