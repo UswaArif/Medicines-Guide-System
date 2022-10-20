@@ -29,6 +29,6 @@ def oddEvenSort(Arr):
             isSorted = 0
    return Arr
 
-Arr = [9,0,2,-3,6,-1,8,7]
+Arr = [9,0,2,-3,26,-1,8,7]
 
 print(oddEvenSort(Arr))
