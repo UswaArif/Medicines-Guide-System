@@ -480,7 +480,7 @@ for i in urlList:
     df = pd.DataFrame(
     {"MedicineName":product_name ,"Old price":product_oldprice,"NewPrice":product_newPrice,"Quantity":quantity,"Stars":stars,
       "Rating":rating,"Discount": discount,"Description":description })
-    df.to_csv('newdata.csv',index=False)
+    df.to_csv('medicine.csv',index=False)
               
 print(len(product_name),len(product_newPrice),len(product_oldprice))        
 for i in range(0,len(product_name)):
