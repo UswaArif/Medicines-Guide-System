@@ -38,5 +38,11 @@ def Merge(array, p, q, r):
             k += 1
 
 
-A = [2,1,4,67,45,5,7]
-print(MergeSort(A,0,len(A)-1))
+def MergeSortDescending(array, start, end):
+    if start < end:
+        q = (start + end) // 2
+        MergeSort(array, start, q)
+        MergeSort(array, q + 1, end)
+        Merge(array, start, q, end)
+        array.reverse()
+        return array
