@@ -22,6 +22,7 @@ def heapSort(arr):
     for i in range(n - 1, 0, -1):
         (arr[i], arr[0]) = (arr[0], arr[i]) 
         MaxHeapify(arr, i, 0)
+    return arr
  
 
 Arr = [2,43,2,4,6,1,9,4,6,0]
