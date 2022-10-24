@@ -1,13 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 23 23:57:22 2022
-
-@author: HP
-"""
-
 MIN_MERGE = 32
- 
- 
+
 def calcMinRun(n):
     r = 0
     while n >= MIN_MERGE:
@@ -80,8 +72,25 @@ def timSort(arr):
         size = 2 * size
     return arr
  
-arr = [-2, 7, 15, -14, 0, 0, 7, -7, -4, -133, 5, 8, -14, 12]
- 
 
-print(timSort(arr))
  
+def timSortDescending(arr):
+    n = len(arr)
+    minRun = calcMinRun(n)
+
+    for start in range(0, n, minRun):
+        end = min(start + minRun - 1, n - 1)
+        insertionSort(arr, start, end)
+ 
+    size = minRun
+    while size < n:
+        for left in range(0, n, 2 * size):
+            mid = min(n - 1, left + size - 1)
+            right = min((left + 2 * size - 1), (n - 1))
+ 
+            if mid < right:
+                merge(arr, left, mid, right)
+ 
+        size = 2 * size
+    arr.reverse()
+    return arr
