@@ -5,7 +5,7 @@ from selenium import webdriver
 driver = webdriver.Chrome(executable_path= 'C:\Program Files (x86)\chromedriver')
 
 urlList = ['https://www.flipkart.com/health-care/home-medicines/pr?sid=hlc,ah4&marketplace=FLIPKART',
-           'https://www.flipkart.com/search?q=medicines&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=2',
+            'https://www.flipkart.com/search?q=medicines&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=2',
            'https://www.flipkart.com/search?q=medicines&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=3',
            'https://www.flipkart.com/search?q=medicines&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=4',
            'https://www.flipkart.com/search?q=medicines&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=5',
