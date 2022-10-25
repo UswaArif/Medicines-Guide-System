@@ -1,29 +1,40 @@
-def MaxHeapify(arr, n, i):
-    l = 2 * i 
-    r = 2 * i + 1
- 
-    if l < n and arr[l] > arr[i]:
-        largest = l
+def maxHeapify(array, n, i):
+    largest = i  
+    left = 2 * i   
+    right = 2 * i + 1  
+
+    if left < n and array[i] < array[left]:
+        largest = left
     else:
         largest = i
-
-    if r < n and arr[r] > arr[largest]:
-        largest = r
  
+    if right < n and array[largest] < array[right]:
+        largest = right
+  
     if largest != i:
-        (arr[i], arr[largest]) = (arr[largest], arr[i]) 
-        MaxHeapify(arr, n, largest)
- 
-def heapSort(arr):
-    n = len(arr)
+        (array[i], array[largest]) = (array[largest], array[i]) 
+
+        maxHeapify(array, n, largest)
+
+def buildMaxHeap(array):
+    n = len(array)
     for i in range(n // 2 - 1, -1, -1):
-        MaxHeapify(arr, n, i)
- 
+        maxHeapify(array, n, i)
+
+def heapSort(array):
+    n = len(array)
+    buildMaxHeap(array)
     for i in range(n - 1, 0, -1):
-        (arr[i], arr[0]) = (arr[0], arr[i]) 
-        MaxHeapify(arr, i, 0)
-    return arr
+        (array[i], array[0]) = (array[0], array[i])  
+        maxHeapify(array, i, 0)
+    return array
  
 
-Arr = [2,43,2,4,6,1,9,4,6,0]
-print(heapSort(Arr))
+def heapSortDescending(array):
+    n = len(array)
+    buildMaxHeap(array)
+    for i in range(n - 1, 0, -1):
+        (array[i], array[0]) = (array[0], array[i])  
+        maxHeapify(array, i, 0)
+    array.reverse()
+    return array
