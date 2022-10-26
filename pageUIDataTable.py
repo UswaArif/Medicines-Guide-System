@@ -1,3 +1,4 @@
+from os import remove
 from re import I
 from PyQt5 import QtWidgets, uic
 from PyQt5 import *
@@ -5,9 +6,9 @@ from PyQt5.QtWidgets import QDialog, QApplication
 import pandas as pd
 
 app = QtWidgets.QApplication([])
-dlg = uic.loadUi("D:\MidTerm\cs261f22pid36\Medicine Guide 2.UI")
+dlg = uic.loadUi("E:\CS261F22PID36\Medicine Guide.ui")
 
-df = pd.read_csv("newdata.csv")
+df = pd.read_csv("newdata2.csv")
 MedicineName = df["MedicineName"].values.tolist() 
 Oldprice = df["Old price"].values.tolist() 
 NewPrice = df["NewPrice"].values.tolist() 
@@ -17,6 +18,10 @@ Rating = df["Rating"].values.tolist()
 Discount = df["Discount"].values.tolist() 
 Description = df["Description"].values.tolist() 
 
+Starsfloat = []
+for i in Stars:          
+    Starsfloat.append(float(i))
+print(Starsfloat)
 #stars_modified = []
 #for i in Stars:
 #    stars_modified.append(int(i))
@@ -77,6 +82,15 @@ def dataDescription(p8):
         dlg.tableWidget.setItem(DescriptionRow, 7, QtWidgets.QTableWidgetItem(Description))
         DescriptionRow = DescriptionRow  + 1
 
+def InsertionSortingList(MedicineName):
+    insertionList = InsertionSort(MedicineName)
+    print(insertionList)
+    MedicineNameRow = 0
+    dlg.tableWidget.setRowCount(len(insertionList))
+    for names in insertionList:
+        dlg.tableWidget.setItem(MedicineNameRow, 0, QtWidgets.QTableWidgetItem(names))
+        MedicineNameRow = MedicineNameRow  + 1
+
 dataMedicineName(MedicineName)
 dataOldprice(Oldprice)
 dataNewPrice(NewPrice)
@@ -85,8 +99,9 @@ dataStars(Stars)
 dataRating(Rating)
 dataDiscount(Discount)
 dataDescription(Description)
-insertionList = InsertionSort(Oldprice)
-dlg.sortButton.clicked.connect((insertionList))
+#insertionList = InsertionSort(Oldprice)
+dlg.sortButton.clicked.connect((InsertionSortingList))
+print(InsertionSortingList(MedicineName))
 
 dlg.show()
 app.exec()
