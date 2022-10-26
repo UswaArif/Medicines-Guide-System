@@ -26,7 +26,6 @@ for i in Stars:
     Starsfloat.append(float(i))
 print(Starsfloat)
 
-
 for i in NewPrice:
     NewPriceInt.append(int(i))
 print(NewPriceInt)
