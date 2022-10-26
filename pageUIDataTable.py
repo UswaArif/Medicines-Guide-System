@@ -6,9 +6,9 @@ from PyQt5.QtWidgets import QDialog, QApplication
 import pandas as pd
 
 app = QtWidgets.QApplication([])
-dlg = uic.loadUi("E:\CS261F22PID36\Medicine Guide.ui")
+dlg = uic.loadUi("D:\MidTerm\cs261f22pid36\Medicine Guide 2.UI")
 
-df = pd.read_csv("newdata2.csv")
+df = pd.read_csv("newdata.csv")
 MedicineName = df["MedicineName"].values.tolist() 
 Oldprice = df["Old price"].values.tolist() 
 NewPrice = df["NewPrice"].values.tolist() 
@@ -114,9 +114,8 @@ dataStars(Stars)
 dataRating(Rating)
 dataDiscount(Discount)
 dataDescription(Description)
-#insertionList = InsertionSort(Oldprice)
-dlg.sortButton.clicked.connect((InsertionSortingList))
-print(InsertionSortingList(MedicineName))
+insertionList = InsertionSort(Oldprice)
+dlg.sortButton.clicked.connect((insertionList))
 
 dlg.show()
 app.exec()
