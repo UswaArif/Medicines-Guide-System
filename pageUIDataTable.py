@@ -19,9 +19,25 @@ Discount = df["Discount"].values.tolist()
 Description = df["Description"].values.tolist() 
 
 Starsfloat = []
+NewPriceInt = []
+OldpriceInt = []
+RatingInt = []
 for i in Stars:          
     Starsfloat.append(float(i))
 print(Starsfloat)
+
+
+for i in NewPrice:
+    NewPriceInt.append(int(i))
+print(NewPriceInt)
+
+for i in Oldprice:
+    OldpriceInt.append(i)
+print(OldpriceInt)
+
+for i in Rating:
+    RatingInt.append(int(i))
+print(RatingInt)
 #stars_modified = []
 #for i in Stars:
 #    stars_modified.append(int(i))
@@ -43,13 +59,13 @@ def dataMedicineName(data):
 def dataOldprice(p2):
     OldpriceRow = 0
     for oldPrice in p2:
-        dlg.tableWidget.setItem(OldpriceRow, 1, QtWidgets.QTableWidgetItem(oldPrice))
+        dlg.tableWidget.setItem(OldpriceRow, 1, QtWidgets.QTableWidgetItem(str(oldPrice)))
         OldpriceRow = OldpriceRow  + 1
     
 def dataNewPrice(p3):
     NewPriceRow = 0
     for newPrice in p3:
-        dlg.tableWidget.setItem(NewPriceRow, 2, QtWidgets.QTableWidgetItem(newPrice))
+        dlg.tableWidget.setItem(NewPriceRow, 2, QtWidgets.QTableWidgetItem(str(newPrice)))
         NewPriceRow = NewPriceRow  + 1
 
 def dataQuantity(p4):
@@ -67,7 +83,7 @@ def dataStars(p5):
 def dataRating(p6):
     RatingRow = 0
     for Rating in p6:
-        dlg.tableWidget.setItem(RatingRow, 5, QtWidgets.QTableWidgetItem(Rating))
+        dlg.tableWidget.setItem(RatingRow, 5, QtWidgets.QTableWidgetItem(str(Rating)))
         RatingRow = RatingRow  + 1
 
 def dataDiscount(p7):
