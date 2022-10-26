@@ -1,3 +1,4 @@
+from os import remove
 from re import I
 from PyQt5 import QtWidgets, uic
 from PyQt5 import *
@@ -5,9 +6,9 @@ from PyQt5.QtWidgets import QDialog, QApplication
 import pandas as pd
 
 app = QtWidgets.QApplication([])
-dlg = uic.loadUi("D:\MidTerm\cs261f22pid36\MedicineGuide2.UI")
+dlg = uic.loadUi("D:\MidTerm\cs261f22pid36\Medicine Guide 2.UI")
 
-df = pd.read_csv("newdata2.csv")
+df = pd.read_csv("newdata.csv")
 MedicineName = df["MedicineName"].values.tolist() 
 Oldprice = df["Old price"].values.tolist() 
 NewPrice = df["NewPrice"].values.tolist() 
@@ -17,6 +18,26 @@ Rating = df["Rating"].values.tolist()
 Discount = df["Discount"].values.tolist() 
 Description = df["Description"].values.tolist() 
 
+Starsfloat = []
+NewPriceInt = []
+OldpriceInt = []
+RatingInt = []
+for i in Stars:          
+    Starsfloat.append(float(i))
+print(Starsfloat)
+
+
+for i in NewPrice:
+    NewPriceInt.append(int(i))
+print(NewPriceInt)
+
+for i in Oldprice:
+    OldpriceInt.append(i)
+print(OldpriceInt)
+
+for i in Rating:
+    RatingInt.append(int(i))
+print(RatingInt)
 #stars_modified = []
 #for i in Stars:
 #    stars_modified.append(int(i))
@@ -38,13 +59,13 @@ def dataMedicineName(data):
 def dataOldprice(p2):
     OldpriceRow = 0
     for oldPrice in p2:
-        dlg.tableWidget.setItem(OldpriceRow, 1, QtWidgets.QTableWidgetItem(oldPrice))
+        dlg.tableWidget.setItem(OldpriceRow, 1, QtWidgets.QTableWidgetItem(str(oldPrice)))
         OldpriceRow = OldpriceRow  + 1
     
 def dataNewPrice(p3):
     NewPriceRow = 0
     for newPrice in p3:
-        dlg.tableWidget.setItem(NewPriceRow, 2, QtWidgets.QTableWidgetItem(newPrice))
+        dlg.tableWidget.setItem(NewPriceRow, 2, QtWidgets.QTableWidgetItem(str(newPrice)))
         NewPriceRow = NewPriceRow  + 1
 
 def dataQuantity(p4):
@@ -62,7 +83,7 @@ def dataStars(p5):
 def dataRating(p6):
     RatingRow = 0
     for Rating in p6:
-        dlg.tableWidget.setItem(RatingRow, 5, QtWidgets.QTableWidgetItem(Rating))
+        dlg.tableWidget.setItem(RatingRow, 5, QtWidgets.QTableWidgetItem(str(Rating)))
         RatingRow = RatingRow  + 1
 
 def dataDiscount(p7):
@@ -77,6 +98,15 @@ def dataDescription(p8):
         dlg.tableWidget.setItem(DescriptionRow, 7, QtWidgets.QTableWidgetItem(Description))
         DescriptionRow = DescriptionRow  + 1
 
+def InsertionSortingList(MedicineName):
+    insertionList = InsertionSort(MedicineName)
+    print(insertionList)
+    MedicineNameRow = 0
+    dlg.tableWidget.setRowCount(len(insertionList))
+    for names in insertionList:
+        dlg.tableWidget.setItem(MedicineNameRow, 0, QtWidgets.QTableWidgetItem(names))
+        MedicineNameRow = MedicineNameRow  + 1
+
 dataMedicineName(MedicineName)
 dataOldprice(Oldprice)
 dataNewPrice(NewPrice)
@@ -86,8 +116,7 @@ dataRating(Rating)
 dataDiscount(Discount)
 dataDescription(Description)
 insertionList = InsertionSort(Oldprice)
-#print(insertionList)
-#dlg.sortButton.clicked.connect(insertionList)
+dlg.sortButton.clicked.connect((insertionList))
 
 dlg.show()
 app.exec()
