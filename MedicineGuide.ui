@@ -85,6 +85,71 @@
       <height>22</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>Insertion Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Merge Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Selection Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bubble Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Quick Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heap Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counting Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Radix Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bucket Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tim Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>PigeonHole Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Odd-Even Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Shell Sort</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="sortButton">
     <property name="geometry">
@@ -291,47 +356,42 @@
     </row>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Names</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Old Price</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>New Price</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Quantity</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Stars</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Orders</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Discount</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>New Column</string>
+      <string>Description</string>
      </property>
     </column>
    </widget>

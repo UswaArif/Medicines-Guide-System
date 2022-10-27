@@ -1,3 +1,4 @@
+from re import search
 import sys
 from tkinter import Widget
 from PyQt5.uic import loadUi
@@ -17,14 +18,13 @@ class MainWindow(QMainWindow):
         col=df.shape[1]
         self.tableWidget.setColumnCount(col)
         self.tableWidget.setRowCount(rows)
-
         a=df.values
         for i in range(rows):
             for j in range(col):
                 self.tableWidget.setItem(i,j,QTableWidgetItem(str(a[i][j])))
         self.tableWidget.resizeColumnsToContents()
         self.tableWidget.resizeRowsToContents()
-    
+
 
 app = QApplication(sys.argv)
 mainwindow = MainWindow()
