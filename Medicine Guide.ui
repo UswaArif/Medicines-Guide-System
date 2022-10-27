@@ -424,12 +424,12 @@
     </item>
     <item>
      <property name="text">
-      <string>Old price</string>
+      <string>Old Prices</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>NewPrice</string>
+      <string>New Prices</string>
      </property>
     </item>
     <item>

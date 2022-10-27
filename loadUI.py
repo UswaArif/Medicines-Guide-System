@@ -74,19 +74,20 @@ class MainWindow(QMainWindow):
     def InsertionSortImplement(self):
         
         MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description=self.read()
-       # QMessageBox.about(self,'error1','Order')
+        #QMessageBox.about(self,'error1','Order')
 
         column = self.ColumncomboBox.currentText()
         Order = self.AscendCombobox.currentText()
         sort = self.sortCombobox.currentText()
-        
+        print(insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description))
+        QMessageBox.about(self,'error1', column)
         if column == 'Name' and Order == 'Ascending' and sort == 'Insertion':
             MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description = insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description)
 
-        elif column == ''
-        
+        elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description = insertionSort.InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description)
+            
         MedicineNameRow = 0
-        #self.tableWidget.setRowCount(len(MedicineName))
         for names in MedicineName:
             self.tableWidget.setItem(MedicineNameRow, 0, QtWidgets.QTableWidgetItem(names))
             MedicineNameRow = MedicineNameRow  + 1
@@ -125,6 +126,9 @@ class MainWindow(QMainWindow):
         for description in Description:
             self.tableWidget.setItem(DescriptionRow, 7, QtWidgets.QTableWidgetItem(description))
             DescriptionRow = DescriptionRow  + 1
+            
+        
+        
         
         
     

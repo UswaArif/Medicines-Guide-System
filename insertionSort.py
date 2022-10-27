@@ -31,7 +31,7 @@ def InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,Ratin
     return MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description
 
 def InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description):
-    for i in range(0, len(OldpriceInt)):
+    for i in range(0,OldpriceInt):
         Key = MedicineName[i]
         KeyOld = OldpriceInt[i]
         KeyNew = NewPriceInt[i]
@@ -42,7 +42,7 @@ def InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsflo
         KeyDescript = Description[i]
 
         j = i - 1 
-        while(Key < MedicineName[j] and j  >= 0):
+        while(KeyOld < OldpriceInt[j] and j  >= 0):
             MedicineName[j + 1] = MedicineName[j]
             OldpriceInt[j + 1] = OldpriceInt[j]
             NewPriceInt[j + 1] = NewPriceInt[j]
