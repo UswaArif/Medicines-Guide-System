@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
         self.advancedButton = QtWidgets.QPushButton(self.centralwidget)
         self.advancedButton.setGeometry(QtCore.QRect(0, 30, 101, 23))
         self.advancedButton.setObjectName("advancedButton")
-        self.searchLabel = QtWidgets.QLabel(self.centralwidget)
+        self.searchLabel = QtWidgets.QLabel(self.centralwidget, clicked = lambda: self.clicker())
         self.searchLabel.setGeometry(QtCore.QRect(10, 60, 141, 16))
         self.searchLabel.setObjectName("searchLabel")
         self.searchCombobox = QtWidgets.QComboBox(self.centralwidget)
@@ -129,6 +129,19 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
+        # Add items to comboBox
+        self.searchCombobox.addItem("Name")
+        self.searchCombobox.addItem("Old Price")
+        self.searchCombobox.addItem("New Price")
+        self.searchCombobox.addItem("Quantity")
+        self.searchCombobox.addItem("Stars")
+        self.searchCombobox.addItem("Orders")
+        self.searchCombobox.addItem("Discount")
+        self.searchCombobox.addItem("Description")
+        
+
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -161,6 +174,10 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", " Descriptiton"))
         item = self.tableWidget.horizontalHeaderItem(8)
         item.setText(_translate("MainWindow", "New Column"))
+
+    def clicker(self):
+        self.searchLabel.setText(f'You picked: something')
+
 
 
 if __name__ == "__main__":

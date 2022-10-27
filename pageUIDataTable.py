@@ -7,22 +7,18 @@ from PyQt5.QtWidgets import QMainWindow,QApplication,QTableWidgetItem,QStackedWi
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pandas as pd
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        loadUi("MedicineGuide.UI", self)
-#app = QtWidgets.QApplication([])
-#dlg = uic.loadUi("E:\CS261F22PID36\MedicineGuide.ui")
+app = QtWidgets.QApplication([])
+dlg = uic.loadUi("D:\MidTerm\cs261f22pid36\Medicine Guide 2.UI")
 
-    df = pd.read_csv("newdata2.csv")
-    MedicineName = df["MedicineName"].values.tolist() 
-    Oldprice = df["Old price"].values.tolist() 
-    NewPrice = df["NewPrice"].values.tolist() 
-    Quantity = df["Quantity"].values.tolist() 
-    Stars = df["Stars"].values.tolist() 
-    Rating = df["Rating"].values.tolist() 
-    Discount = df["Discount"].values.tolist() 
-    Description = df["Description"].values.tolist() 
+df = pd.read_csv("newdata.csv")
+MedicineName = df["MedicineName"].values.tolist() 
+Oldprice = df["Old price"].values.tolist() 
+NewPrice = df["NewPrice"].values.tolist() 
+Quantity = df["Quantity"].values.tolist() 
+Stars = df["Stars"].values.tolist() 
+Rating = df["Rating"].values.tolist() 
+Discount = df["Discount"].values.tolist() 
+Description = df["Description"].values.tolist() 
 
 
     Starsfloat = []
@@ -122,16 +118,8 @@ dataStars(Stars)
 dataRating(Rating)
 dataDiscount(Discount)
 dataDescription(Description)
-#insertionList = InsertionSort(Oldprice)
+insertionList = InsertionSort(Oldprice)
+dlg.sortButton.clicked.connect((insertionList))
 
-dlg.sortButton.clicked.connect(InsertionSortingList)
-print(InsertionSortingList(MedicineName))
-dlg.startButton.clicked.connect(urlText)
-print(urlText)
-
-#dlg.show()
-#app.exec()
-app = QApplication(sys.argv)
-window = Mainwindow()
-window.show()
-sys.exit(app.exec_())
+dlg.show()
+app.exec()
