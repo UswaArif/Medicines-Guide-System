@@ -23,7 +23,10 @@ urlList = ['https://www.flipkart.com/search?q=medicines&otracker=search&otracker
            'https://www.flipkart.com/health-care/home-medicines/post-natal-care/pr?sid=hlc%2Cah4%2Ced5&q=medicine&otracker=categorytree&page=',
            'https://www.flipkart.com/health-care/home-medicines/skin-care/pr?sid=hlc%2Cah4%2Cjn8&q=medicine&otracker=categorytree&page=',
            'https://www.flipkart.com/health-care/home-medicines/digestive-health/pr?sid=hlc%2Cah4%2C2bl&q=medicine&otracker=categorytree&page=',
-           'https://www.flipkart.com/health-care/home-medicines/hair-care/pr?sid=hlc%2Cah4%2C0tg&q=medicine&otracker=categorytree&page=']
+           'https://www.flipkart.com/health-care/home-medicines/hair-care/pr?sid=hlc%2Cah4%2C0tg&q=medicine&otracker=categorytree&page='
+           'https://www.flipkart.com/health-care/home-medicines/deficiencies/pr?sid=hlc%2Cah4%2C5i6&q=medicines&otracker=categorytree&page='
+           'https://www.flipkart.com/health-care/home-medicines/bone-joint-and-muscle-care/pr?sid=hlc%2Cah4%2Cvv6&q=medicines&otracker=categorytree&page=']
+           
 
 
 
