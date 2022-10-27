@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QMainWindow,QApplication,QTableWidgetItem,QStackedWi
 import pandas as pd
 from Search import Ui_MainWindow
 import insertionSort
+import bubbleSort
+import selectionSort
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -29,14 +31,10 @@ class MainWindow(QMainWindow):
         Discount = df["Discount"].values.tolist() 
         Description = df["Description"].values.tolist()
 
-        Starsfloat = []
         NewPriceInt = []
         OldpriceInt = []
         RatingInt = []
-        for i in Stars:          
-            Starsfloat.append(float(i))
-        #print(Starsfloat)
-
+        
         for i in NewPrice:
             NewPriceInt.append(int(i))
         #print(NewPriceInt)
@@ -48,7 +46,7 @@ class MainWindow(QMainWindow):
         for i in Rating:
             RatingInt.append(int(i))
 
-        return MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description
+        return MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description
 
     def show_new_window(self):
         self.window = QtWidgets.QMainWindow()
@@ -73,20 +71,165 @@ class MainWindow(QMainWindow):
 
     def InsertionSortImplement(self):
         
-        MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description=self.read()
+        MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description=self.read()
         #QMessageBox.about(self,'error1','Order')
 
         column = self.ColumncomboBox.currentText()
         Order = self.AscendCombobox.currentText()
         sort = self.sortCombobox.currentText()
-        print(insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description))
+        #print(insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description))
         QMessageBox.about(self,'error1', column)
+
+        #Insertion Sort Ascending
         if column == 'Name' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description = insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description = insertionSort.InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description)
-            
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortNewPrice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortQuantity(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortStars(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Orders' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortRating(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Discounts' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDiscount(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Descriptions' and Order == 'Ascending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescription(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        #Insertion Sort Descending
+        elif column == 'Name' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Old Prices' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortOldpriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortNewPriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortQuantityDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortStarsDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Orders' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortRatingDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Discounts' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDiscountDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Descriptions' and Order == 'Descending' and sort == 'Insertion':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescriptionDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        #Bubble Sort Ascending
+        elif column == 'Name' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortOldpriceAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortNewPriceAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortQuantityAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortStarsAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortRatingAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Discounts' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortDiscountAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Descriptions' and Order == 'Ascending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortDescriptionAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        #Bubble Sort Descending
+        elif column == 'Name' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Old Prices' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortOldpriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortNewPriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortQuantityDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortStarsDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortRatingDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Discounts' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortDiscountDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'Descriptions' and Order == 'Descending' and sort == 'Bubble':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = bubbleSort.BubbleSortDescriptionDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        #Selection Sort Ascending
+        elif column == 'Name' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortOldpriceAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortNewPriceAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortQuantityAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortStarsAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortRatingAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Discounts' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortDiscountAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Descriptions' and Order == 'Ascending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortDescriptionAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        #Selection Sort Descending
+        elif column == 'Name' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Old Prices' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortOldpriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'New Prices' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortNewPriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Quantity' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortQuantityDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Stars' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortStarsDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortRatingDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Discounts' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortDiscountDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Descriptions' and Order == 'Descending' and sort == 'Selection':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = selectionSort.SelectionSortDescriptionDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
         MedicineNameRow = 0
         for names in MedicineName:
             self.tableWidget.setItem(MedicineNameRow, 0, QtWidgets.QTableWidgetItem(names))
@@ -108,7 +251,7 @@ class MainWindow(QMainWindow):
             QuantityRow = QuantityRow  + 1
 
         StarsRow = 0
-        for star in Starsfloat:
+        for star in Stars:
             self.tableWidget.setItem(StarsRow, 4, QtWidgets.QTableWidgetItem(str(star)))
             StarsRow = StarsRow  + 1
 
