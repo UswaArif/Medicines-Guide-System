@@ -53,20 +53,30 @@
      <string>name</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="searchCombobox">
+   <widget class="QComboBox" name="AscendCombobox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>460</x>
       <y>60</y>
-      <width>171</width>
+      <width>81</width>
       <height>22</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>Ascending</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Descending</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="searchButton">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>180</x>
       <y>60</y>
       <width>75</width>
       <height>23</height>
@@ -79,12 +89,77 @@
    <widget class="QComboBox" name="sortCombobox">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>550</x>
       <y>60</y>
-      <width>171</width>
+      <width>81</width>
       <height>22</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>Insertion</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Merge</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bubble</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Selection</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counting</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bucket</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Radix</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Quick</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heap</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Odd/Even</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>PigoenHole</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tim</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Shell</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="sortButton">
     <property name="geometry">
@@ -209,6 +284,9 @@
       <height>291</height>
      </rect>
     </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
     <row>
      <property name="text">
       <string/>
@@ -291,49 +369,94 @@
     </row>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Names</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Old Prices</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>New Prices</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Quantity</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Stars</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Orders</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Discounts</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string>Descriptions</string>
      </property>
     </column>
-    <column>
+   </widget>
+   <widget class="QComboBox" name="ColumncomboBox">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>60</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
      <property name="text">
-      <string>New Column</string>
+      <string>Name</string>
      </property>
-    </column>
+    </item>
+    <item>
+     <property name="text">
+      <string>Old price</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>NewPrice</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Stars</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Orders</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Discounts</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Descrption</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
