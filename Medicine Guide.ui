@@ -76,7 +76,7 @@
    <widget class="QPushButton" name="searchButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>60</x>
       <y>60</y>
       <width>75</width>
       <height>23</height>
@@ -457,6 +457,19 @@
       <string>Descriptions</string>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="MultiLevelSort">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>60</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Multi Level Sort</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
