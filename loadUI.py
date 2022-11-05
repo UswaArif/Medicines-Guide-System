@@ -3,35 +3,37 @@ import sys
 from tkinter import Widget
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMainWindow,QApplication,QTableWidgetItem,QStackedWidget,QMessageBox
+from PyQt5 import QtWidgets,uic,QtCore
+from PyQt5 import *
+from PyQt5.QtWidgets import QMainWindow,QApplication,QTableWidgetItem,QStackedWidget,QMessageBox,QDialog,QSizePolicy,QPushButton,QComboBox
 import pandas as pd
-from Search import Ui_MainWindow
-import insertionSort
+from AdvancedSearch import Ui_MainWindow
+import InsertionSort2
 import bubbleSort
 import selectionSort
 import shellSort
-import countingSort
 import OddEvenSort
 import mergeSort
 import quickSort
 import heapSort
 import TimSort
 import radixSort
+import search
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi("Medicine Guide.UI", self)
-        
+        loadUi("MedicineGuide.UI", self)
         #print(RatingInt)
         #print(self.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description))
         self.startButton.clicked.connect(self.load)
-        self.sortButton.clicked.connect(self.InsertionSortImplement)
+        self.sortButton.clicked.connect(self.SortingImplement)
         self.advancedButton.clicked.connect(self.show_new_window)
         self.MultiLevelSort.clicked.connect(self.MultiLevelSorting)
+        self.ExcelButton.clicked.connect(self.ExportToExcel)
         
     def read(self):
-        df = pd.read_csv("newdata2.csv")
+        df = pd.read_csv("700Data.csv")
         MedicineName = df["MedicineName"].values.tolist() 
         Oldprice = df["Old price"].values.tolist() 
         NewPrice = df["NewPrice"].values.tolist() 
@@ -65,7 +67,7 @@ class MainWindow(QMainWindow):
         self.window.show()
 
     def load(self):
-        df = pd.read_csv("newdata2.csv")
+        df = pd.read_csv("700Data.csv")
         rows=df.shape[0]
         col=df.shape[1]
         self.tableWidget.setColumnCount(col)
@@ -78,7 +80,7 @@ class MainWindow(QMainWindow):
         self.tableWidget.resizeColumnsToContents()
         self.tableWidget.resizeRowsToContents()
 
-    def InsertionSortImplement(self):
+    def SortingImplement(self):
         
         MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description=self.read()
         #QMessageBox.about(self,'error1','Order')
@@ -87,57 +89,57 @@ class MainWindow(QMainWindow):
         Order = self.AscendCombobox.currentText()
         sort = self.sortCombobox.currentText()
         #print(insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Starsfloat,RatingInt,Discount,Description))
-        QMessageBox.about(self,'error1', column)
+        QMessageBox.about(self,'Column Name', column)
 
         #Insertion Sort Ascending
         if column == 'Name' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSort(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortOldprice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'New Prices' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortNewPrice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortNewPrice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Quantity' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortQuantity(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortQuantity(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Stars' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortStars(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortStars(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
         
         elif column == 'Orders' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortRating(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortRating(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Discounts' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDiscount(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortDiscount(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
         
         elif column == 'Descriptions' and Order == 'Ascending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescription(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortDescription(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         #Insertion Sort Descending
         elif column == 'Name' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Old Prices' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortOldpriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortOldpriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'New Prices' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortNewPriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortNewPriceDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Quantity' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortQuantityDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortQuantityDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Stars' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortStarsDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortStarsDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
         
         elif column == 'Orders' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortRatingDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortRatingDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         elif column == 'Discounts' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDiscountDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortDiscountDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
         
         elif column == 'Descriptions' and Order == 'Descending' and sort == 'Insertion':
-            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = insertionSort.InsertionSortDescriptionDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = InsertionSort2.InsertionSortDescriptionDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
 
         #Bubble Sort Ascending
         elif column == 'Name' and Order == 'Ascending' and sort == 'Bubble':
@@ -511,10 +513,24 @@ class MainWindow(QMainWindow):
 
         #Radix Sort Ascending
         elif column == 'Old Prices' and Order == 'Ascending' and sort == 'Radix':
-            #print(radixSort.RadixSortAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description))
-
             MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortAscending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
         
+        elif column == 'New Prices' and Order == 'Ascending' and sort == 'Radix':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortAscendingNewPrice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Ascending' and sort == 'Radix':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortAscendingRating(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        #Radix Sort Descending
+        elif column == 'Old Prices' and Order == 'Descending' and sort == 'Radix':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortDescending(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+        
+        elif column == 'New Prices' and Order == 'Descending' and sort == 'Radix':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortDescendingNewPrice(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
+        elif column == 'Orders' and Order == 'Descending' and sort == 'Radix':
+            MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description = radixSort.RadixSortDescendingRating(MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description)
+
         else:
             QMessageBox.about(self,'Error','Not Avaiable')
 
@@ -610,13 +626,28 @@ class MainWindow(QMainWindow):
             self.tableWidget.setItem(DescriptionRow, 7, QtWidgets.QTableWidgetItem(description))
             DescriptionRow = DescriptionRow  + 1
 
+    def ExportToExcel(self):
+        #QMessageBox.about(self,'Column Name', 'aa')
+        MedicineName,OldpriceInt,NewPriceInt,Quantity,Stars,RatingInt,Discount,Description=self.read()
         
-
+        data = pd.DataFrame({'Medicine Name': MedicineName,
+                            'Old Price': OldpriceInt,
+                            'New Price': NewPriceInt,
+                            'Quantity': Quantity,
+                            'Stars': Stars,
+                            'Orders': RatingInt,
+                            'Discount': Discount,
+                            'Description': Description
+                            })
+  
+        # determining the name of the file
+        #file_name = 'Data.xlsx'
         
-        
-        
-        
-    
+        # saving the excel
+        data.to_excel('E:\ProjectMid\Data.xlsx',sheet_name='sheet1',index=False,header=True)
+        QMessageBox.about(self,'Column Name', 'aa')
+        print('DataFrame is written to Excel File successfully.')
+            
 
 app = QApplication(sys.argv)
 mainwindow = MainWindow()
